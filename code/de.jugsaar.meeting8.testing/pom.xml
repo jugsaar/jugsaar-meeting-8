@@ -16,6 +16,13 @@
 	<dependencies>
 
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<version>1.1-20130918</version>
@@ -100,6 +107,11 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 	</dependencies>
 

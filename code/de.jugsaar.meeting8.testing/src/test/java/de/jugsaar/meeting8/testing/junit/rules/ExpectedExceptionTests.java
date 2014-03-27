@@ -1,9 +1,11 @@
 package de.jugsaar.meeting8.testing.junit.rules;
 
+import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeThat;
 
 import org.junit.Rule;
@@ -30,7 +32,30 @@ public class ExpectedExceptionTests {
 	Component component = new Component();
 
 	@Test
-	public void foo() {
+	public void foo_with_traditional_exception_handling() {
+
+		Object[] array = { 1, 2, 3 };
+
+		try {
+
+			assertThat(array[2], is(notNullValue()));
+			fail("Should have trown AIOOBE!");
+
+		} catch (Exception ex) {
+
+			assertThat(ex, is(instanceOf(ArrayIndexOutOfBoundsException.class)));
+		}
+	}
+
+	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	public void foo_with_test_expected_exception() {
+
+		Object[] array = { 1 };
+		assertThat(array[2], is(notNullValue()));
+	}
+
+	@Test
+	public void foo_with_expected_exception() {
 
 		Object[] array = {};
 

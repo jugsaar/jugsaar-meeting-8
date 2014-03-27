@@ -1,4 +1,4 @@
-package de.jugsaar.meeting8.testing.junit;
+package de.jugsaar.meeting8.testing.junit.theories;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.greaterThan;
