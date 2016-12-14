@@ -23,7 +23,7 @@ public class AssumptionTests {
 	 * -DdatabaseAvailable=false
 	 */
 	@Test
-	public void getDataMayThrowIfDbNotAvailable() {
+	public void testForBug() {
 
 		System.out.println(springVersion);
 

@@ -60,6 +60,6 @@ public class AwatilityExample {
 		crm.publishEvent(event);
 
 		// Awaitility lets you wait until the asynchronous operation completes:
-		await().atMost(4, SECONDS).until(crm.costumerStatusIsUpdated(customer));
+		await().atMost(2, SECONDS).until(crm.costumerStatusIsUpdated(customer));
 	}
 }

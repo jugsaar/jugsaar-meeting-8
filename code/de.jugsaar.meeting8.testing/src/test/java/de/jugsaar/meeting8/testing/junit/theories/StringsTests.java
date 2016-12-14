@@ -30,6 +30,8 @@ public class StringsTests {
 		assertThat(p, endsWith(s));
 		assertThat(p.length(), is(not(lessThan(minLength))));
 
+		assertThat(p.length(), is(not(lessThan(minLength))));
+
 		String padding = p.substring(0, p.length() - s.length());
 		assertThat(padding, is(equalTo(Strings.repeat("-", padding.length()))));
 	}

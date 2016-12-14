@@ -17,7 +17,7 @@ public class SimpleTestWithRules {
 	@Test
 	public void test1() {
 		Assert.assertEquals("2+1 should be 3", 3, 1 + 2);
-
+		System.err.println("in test");
 	}
 
 	@Test

@@ -15,9 +15,9 @@ public class LogTestMethod implements TestRule {
 	}
 
 	@Override
-	public Statement apply(final Statement base, Description description) {
+	public Statement apply(final Statement base, final Description description) {
 
-		Logger log = Logger.getLogger(description.getClassName());
+		final Logger log = Logger.getLogger(description.getClassName());
 
 		try {
 
@@ -27,12 +27,15 @@ public class LogTestMethod implements TestRule {
 
 				@Override
 				public void evaluate() throws Throwable {
+
 					base.evaluate();
+
+					log.exiting(description.getClassName(), description.getMethodName());
 				}
 			};
 
 		} finally {
-			log.exiting(description.getClassName(), description.getMethodName());
+
 		}
 	}
 }

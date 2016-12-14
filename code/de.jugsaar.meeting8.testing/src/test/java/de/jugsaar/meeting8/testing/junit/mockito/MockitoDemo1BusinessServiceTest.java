@@ -34,6 +34,7 @@ public class MockitoDemo1BusinessServiceTest {
 
 		String ownerName = "bubu";
 		List<Project> projects = Arrays.asList(new Project());
+
 		doReturn(projects).when(projectRepository).findByOwner(anyString());
 
 		List<Project> result = cut.getProjectsByOwner(ownerName);

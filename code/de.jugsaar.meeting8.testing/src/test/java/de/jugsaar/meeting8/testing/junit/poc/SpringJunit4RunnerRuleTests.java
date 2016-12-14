@@ -2,6 +2,7 @@ package de.jugsaar.meeting8.testing.junit.poc;
 
 import org.junit.Assert;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +12,14 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import de.jugsaar.meeting8.testing.junit.poc.SpringContext.Use;
 import de.jugsaar.meeting8.testing.junit.poc.SpringJunit4RunnerRuleTests.Nested.SpecialConfig;
+import de.jugsaar.meeting8.testing.junit.rules.custom.LogTestMethod;
 
 @ContextConfiguration(loader = AnnotationConfigContextLoader.class)
 public class SpringJunit4RunnerRuleTests {
 
 	@ClassRule public static SpringContext springContext = new SpringContext();
+
+	@Rule public LogTestMethod logTestMethod = new LogTestMethod();
 
 	@Autowired Foo foo;
 

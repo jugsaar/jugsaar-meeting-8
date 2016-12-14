@@ -34,7 +34,7 @@ public class ExpectedExceptionTests {
 	@Test
 	public void foo_with_traditional_exception_handling() {
 
-		Object[] array = { 1, 2, 3 };
+		Object[] array = { 1 };
 
 		try {
 

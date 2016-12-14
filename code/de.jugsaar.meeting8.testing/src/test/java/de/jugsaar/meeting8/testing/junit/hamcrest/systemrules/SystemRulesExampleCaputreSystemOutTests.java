@@ -16,7 +16,9 @@ public class SystemRulesExampleCaputreSystemOutTests {
 
 	@Test
 	public void captureOutputStream() {
+
 		System.out.print("hello world");
+
 		assertEquals("hello world", log.getLog());
 	}
 }

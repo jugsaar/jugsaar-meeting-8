@@ -26,5 +26,7 @@ public class AssertJFluentMatchersTests {
 		assertThat(VERSION.getMajor()).isEqualTo(1);
 		assertThat(VERSION.getMinor()).isEqualTo(2);
 		assertThat(VERSION.getPatch()).isEqualTo(3);
+
+		assertThat(VERSION).isNotNull().isSameAs(VERSION);
 	}
 }

@@ -9,6 +9,7 @@ public class BasicTest {
 
 	@Test
 	public void test1() {
+
 		System.out.println(getCurrentMethodName());
 
 		Assert.assertEquals("2+1 should be 3", 3, 1 + 2);

@@ -25,6 +25,7 @@ public class MockitoDemo7_Stubbing {
 
 		Statement stmt = mock(Statement.class, RETURNS_DEEP_STUBS);
 		ResultSet rsMock = stmt.executeQuery(startsWith("select *"));
+
 		when(rsMock.next()).thenReturn(true, false);
 		when(rsMock.getString("bubu")).thenReturn("42");
 
